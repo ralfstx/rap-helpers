@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SingleSourcing Helpers RAP
+Bundle-SymbolicName: com.eclipsesource.singlesourcing.rap
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: EclipseSource
+Fragment-Host: com.eclipsesource.singlesourcing;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.eclipse.rap.ui;bundle-version="1.4.0"
