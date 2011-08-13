@@ -25,6 +25,6 @@ Other examples
 *test.additionalhttpservice* is a bundle that starts up a Jetty HTTP server programmatically on port 10001.
 This is useful to test RAP with different HTTP services (see [bug 241210](https://bugs.eclipse.org/bugs/show_bug.cgi?id=241210 "Should be possible to filter HttpService instance")).
 
-*example.rwt.simple is a simple RWT example application that uses the new RWT-OSGi integration.
+*example.rwt.simple* is a simple RWT example application that uses the new RWT-OSGi integration.
 The bundle uses a declarative service to register with RWT.
 
