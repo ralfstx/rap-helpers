@@ -15,20 +15,27 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 
 
 public class SimpleEntryPoint implements IEntryPoint {
 
   public int createUI() {
+    // Create a maximized top-level shell without trimmings that represents the main "page"
     Display display = new Display();
-    Shell shell = new Shell( display );
-    shell.setLayout( new GridLayout( 1, false ) );
-    Button button = new Button( shell, SWT.PUSH );
-    button.setText( "Hello" );
-    shell.pack();
-    shell.open();
-    while( !shell.isDisposed() ) {
+    Shell page = new Shell( display, SWT.NO_TRIM );
+    page.setMaximized( true );
+    page.setLayout( new GridLayout() );
+    // Create contents of main shell
+    Label label = new Label( page, SWT.NONE );
+    label.setText( "Hello" );
+    Button button = new Button( page, SWT.PUSH );
+    button.setText( "World" );
+    // Open the top-level shell and run the main loop to process events
+    page.layout();
+    page.open();
+    while( !page.isDisposed() ) {
       if( !display.readAndDispatch() ) {
         display.sleep();
       }
