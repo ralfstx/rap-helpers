@@ -22,7 +22,11 @@ public class SimpleConfigurator implements Configurator {
     context.addBranding( new AbstractBranding() {
       @Override
       public String getServletName() {
-        return "rwt";
+        return "simple";
+      }
+      @Override
+      public String getTitle() {
+        return "Simple RWT Example";
       }
     } );
   }
