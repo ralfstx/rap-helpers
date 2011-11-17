@@ -9,7 +9,7 @@ Running the example
 
 * Use the included launch configuration
 
-* Point your browser at http://localhost:8080/rwt
+* Point your browser at http://localhost:8080/simple
 
 In case of problems
 -------------------
