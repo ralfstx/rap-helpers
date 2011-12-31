@@ -10,16 +10,16 @@
  ******************************************************************************/
 package rwt.simple;
 
+import org.eclipse.rwt.application.ApplicationConfiguration;
+import org.eclipse.rwt.application.ApplicationConfigurator;
 import org.eclipse.rwt.branding.AbstractBranding;
-import org.eclipse.rwt.engine.Configurator;
-import org.eclipse.rwt.engine.Context;
 
 
-public class SimpleConfigurator implements Configurator {
+public class SimpleConfigurator implements ApplicationConfigurator {
 
-  public void configure( Context context ) {
-    context.addEntryPoint( "default", SimpleEntryPoint.class );
-    context.addBranding( new AbstractBranding() {
+  public void configure( ApplicationConfiguration configuration ) {
+    configuration.addEntryPoint( "default", SimpleEntryPoint.class );
+    configuration.addBranding( new AbstractBranding() {
       @Override
       public String getServletName() {
         return "simple";

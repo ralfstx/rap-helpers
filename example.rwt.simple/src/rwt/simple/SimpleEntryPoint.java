@@ -35,12 +35,6 @@ public class SimpleEntryPoint implements IEntryPoint {
     // Open the top-level shell and run the main loop to process events
     page.layout();
     page.open();
-    while( !page.isDisposed() ) {
-      if( !display.readAndDispatch() ) {
-        display.sleep();
-      }
-    }
-    display.dispose();
     return 0;
   }
 
