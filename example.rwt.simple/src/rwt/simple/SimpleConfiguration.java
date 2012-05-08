@@ -10,25 +10,20 @@
  ******************************************************************************/
 package rwt.simple;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import org.eclipse.rwt.application.Application;
 import org.eclipse.rwt.application.ApplicationConfiguration;
-import org.eclipse.rwt.application.ApplicationConfigurator;
-import org.eclipse.rwt.branding.AbstractBranding;
+import org.eclipse.rwt.client.WebClient;
 
 
-public class SimpleConfigurator implements ApplicationConfigurator {
+public class SimpleConfiguration implements ApplicationConfiguration {
 
-  public void configure( ApplicationConfiguration configuration ) {
-    configuration.addEntryPoint( "/simple", SimpleEntryPoint.class );
-    configuration.addBranding( new AbstractBranding() {
-      @Override
-      public String getServletName() {
-        return "simple";
-      }
-      @Override
-      public String getTitle() {
-        return "Simple RWT Example";
-      }
-    } );
+  public void configure( Application application ) {
+    Map<String, String> properties = new HashMap<String, String>();
+    properties.put( WebClient.PAGE_TITLE, "Simple RWT Example" );
+    application.addEntryPoint( "/simple", SimpleEntryPoint.class, null );
   }
 
 }
