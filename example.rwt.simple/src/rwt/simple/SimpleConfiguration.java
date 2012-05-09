@@ -23,7 +23,7 @@ public class SimpleConfiguration implements ApplicationConfiguration {
   public void configure( Application application ) {
     Map<String, String> properties = new HashMap<String, String>();
     properties.put( WebClient.PAGE_TITLE, "Simple RWT Example" );
-    application.addEntryPoint( "/simple", SimpleEntryPoint.class, null );
+    application.addEntryPoint( "/simple", SimpleEntryPoint.class, properties );
   }
 
 }
