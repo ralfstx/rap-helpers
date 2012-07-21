@@ -13,9 +13,9 @@ package rwt.simple;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.eclipse.rwt.application.Application;
-import org.eclipse.rwt.application.ApplicationConfiguration;
-import org.eclipse.rwt.client.WebClient;
+import org.eclipse.rap.rwt.application.Application;
+import org.eclipse.rap.rwt.application.ApplicationConfiguration;
+import org.eclipse.rap.rwt.client.WebClient;
 
 
 public class SimpleConfiguration implements ApplicationConfiguration {

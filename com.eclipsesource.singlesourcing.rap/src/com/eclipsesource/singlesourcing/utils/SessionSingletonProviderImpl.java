@@ -10,7 +10,7 @@
  ******************************************************************************/
 package com.eclipsesource.singlesourcing.utils;
 
-import org.eclipse.rwt.SessionSingletonBase;
+import org.eclipse.rap.rwt.SessionSingletonBase;
 
 import com.eclipsesource.singlesourcing.utils.SessionSingletonProvider;
 
