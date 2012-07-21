@@ -1,7 +1,15 @@
 RAP Helpers
 ===========
 
-This repository includes code examples for single sourcing with RAP and RCP.
+This repository includes some code examples for RAP.
+
+Simple RAP applications
+-----------------------
+
+*example.rwt.simple* is a simple RWT example application that uses the RWT-OSGi integration.
+This bundle uses a bundle activator to register its configuration as a service.
+
+*example.rwt.simple.ds* is a copy of this bundle that uses a declarative service.
 
 Single sourcing
 ---------------
@@ -25,6 +33,4 @@ Other examples
 *test.additionalhttpservice* is a bundle that starts up a Jetty HTTP server programmatically on port 10001.
 This is useful to test RAP with different HTTP services (see [bug 241210](https://bugs.eclipse.org/bugs/show_bug.cgi?id=241210 "Should be possible to filter HttpService instance")).
 
-*example.rwt.simple* is a simple RWT example application that uses the new RWT-OSGi integration.
-The bundle uses a declarative service to register with RWT.
 
