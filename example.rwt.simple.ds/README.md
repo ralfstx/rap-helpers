@@ -2,7 +2,7 @@ Simple RWT Example
 ==================
 
 A simple RWT example application that uses the new RWT-OSGi integration.
-The bundle uses a bundle activator to register its application configuration with RWT.
+The bundle uses a declarative service to register with RWT.
 
 Running the example
 -------------------
