@@ -10,7 +10,7 @@
  ******************************************************************************/
 package rwt.simple;
 
-import org.eclipse.rap.rwt.lifecycle.IEntryPoint;
+import org.eclipse.rap.rwt.application.EntryPoint;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
@@ -19,7 +19,7 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 
 
-public class SimpleEntryPoint implements IEntryPoint {
+public class SimpleEntryPoint implements EntryPoint {
 
   @Override
   public int createUI() {
