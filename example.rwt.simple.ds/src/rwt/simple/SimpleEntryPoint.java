@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2011, 2012 EclipseSource and others.
+ * Copyright (c) 2011, 2013 EclipseSource and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,33 +10,23 @@
  ******************************************************************************/
 package rwt.simple;
 
-import org.eclipse.rap.rwt.application.EntryPoint;
+import org.eclipse.rap.rwt.application.AbstractEntryPoint;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
-import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
-import org.eclipse.swt.widgets.Shell;
 
 
-public class SimpleEntryPoint implements EntryPoint {
+public class SimpleEntryPoint extends AbstractEntryPoint {
 
   @Override
-  public int createUI() {
-    // Create a maximized top-level shell without trimmings that represents the main "page"
-    Display display = new Display();
-    Shell page = new Shell( display, SWT.NO_TRIM );
-    page.setMaximized( true );
-    page.setLayout( new GridLayout() );
-    // Create contents of main shell
-    Label label = new Label( page, SWT.NONE );
+  protected void createContents( Composite parent ) {
+    parent.setLayout( new GridLayout( 2, false ) );
+    Label label = new Label( parent, SWT.NONE );
     label.setText( "Hello" );
-    Button button = new Button( page, SWT.PUSH );
+    Button button = new Button( parent, SWT.PUSH );
     button.setText( "World" );
-    // Open the top-level shell and run the main loop to process events
-    page.layout();
-    page.open();
-    return 0;
   }
 
 }
