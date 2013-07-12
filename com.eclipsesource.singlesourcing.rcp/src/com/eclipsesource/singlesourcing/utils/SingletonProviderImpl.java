@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2010 EclipseSource
+ * Copyright (c) 2010, 2013 EclipseSource and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,21 +15,21 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class SessionSingletonProviderImpl extends SessionSingletonProvider {
+public class SingletonProviderImpl extends SingletonProvider {
 
   private final static Class<?>[] EMPTY_PARAMS = new Class[ 0 ];
 
-  private final Map<Class<?>, Object> INSTANCES = new HashMap<Class<?>, Object>();
+  private final Map<Class<?>, Object> instances = new HashMap<Class<?>, Object>();
 
   @Override
   @SuppressWarnings("unchecked")
-  <T> T getInstanceInternal( Class<T> type ) {
+  <T> T getSessionInstanceInternal( Class<T> type ) {
     T instance;
-    synchronized( INSTANCES ) {
-      instance = ( T )INSTANCES.get( type );
+    synchronized( instances ) {
+      instance = ( T )instances.get( type );
       if( instance == null ) {
         instance = instantiate( type );
-        INSTANCES.put( type, instance );
+        instances.put( type, instance );
       }
     }
     return instance;
@@ -50,4 +50,5 @@ public class SessionSingletonProviderImpl extends SessionSingletonProvider {
     }
     return result;
   }
+
 }

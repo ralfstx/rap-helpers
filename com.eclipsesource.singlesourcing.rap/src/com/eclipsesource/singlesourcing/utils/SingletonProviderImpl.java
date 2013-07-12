@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2010, 2012 EclipseSource
+ * Copyright (c) 2010, 2013 EclipseSource and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,15 +10,16 @@
  ******************************************************************************/
 package com.eclipsesource.singlesourcing.utils;
 
-import org.eclipse.rap.rwt.SessionSingletonBase;
+import org.eclipse.rap.rwt.SingletonUtil;
 
-import com.eclipsesource.singlesourcing.utils.SessionSingletonProvider;
+import com.eclipsesource.singlesourcing.utils.SingletonProvider;
 
 
-public class SessionSingletonProviderImpl extends SessionSingletonProvider {
+public class SingletonProviderImpl extends SingletonProvider {
 
   @Override
-  <T> T getInstanceInternal( Class<T> type ) {
-    return SessionSingletonBase.getInstance( type );
+  <T> T getSessionInstanceInternal( Class<T> type ) {
+    return SingletonUtil.getSessionInstance( type );
   }
+
 }

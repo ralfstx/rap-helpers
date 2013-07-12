@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2010, 2012 EclipseSource
+ * Copyright (c) 2010, 2013 EclipseSource
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -11,14 +11,15 @@
 package com.eclipsesource.singlesourcing.utils;
 
 
-public abstract class SessionSingletonProvider {
+public abstract class SingletonProvider {
 
-  private static final SessionSingletonProvider IMPL
-    = ImplementationLoader.createInstance( SessionSingletonProvider.class );
+  private static final SingletonProvider IMPL
+    = ImplementationLoader.createInstance( SingletonProvider.class );
 
-  public static <T> T getInstance( Class<T> type ) {
-    return IMPL.getInstanceInternal( type );
+  public static <T> T getSessionInstance( Class<T> type ) {
+    return IMPL.getSessionInstanceInternal( type );
   }
 
-  abstract <T> T getInstanceInternal( Class<T> type );
+  abstract <T> T getSessionInstanceInternal( Class<T> type );
+
 }
