@@ -11,15 +11,15 @@ This bundle uses a bundle activator to register its configuration as a service.
 
 *example.rwt.simple.ds* is a copy of this bundle that uses a declarative service.
 
-Single sourcing
----------------
+Single sourcing helpers
+-----------------------
 
 *com.eclipsesource.singlesourcing* is a bundle to be shared by both RAP-based and RCP-based applications.
 *com.eclipsesource.singlesourcing.rap* and *com.eclipsesource.singlesourcing.rcp* are the corresponding fragments for RAP and RCP.
 Add both the bundle itself and the one fragment that matches the respective platform to the deployment.
 You can then instantiate a class like this:
 
-    ShoppingCart cart = SessionSingletonProvider.getInstance( ShoppingCart.class );
+    ShoppingCart cart = SingletonProvider.getSessionInstance( ShoppingCart.class );
 
 For every different session in RAP, a new instance will be created.
 Whenever you call this method from the same session, you will receive the same instance.
